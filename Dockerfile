@@ -1,4 +1,4 @@
-from bitnami/wordpress
+FROM  dockerhub.artifacts.developer.gov.bc.ca/bitnami/wordpress
 
 
 COPY /confs/httpd.conf /opt/bitnami/apache/conf/httpd.conf
