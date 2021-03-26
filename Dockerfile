@@ -10,14 +10,15 @@ COPY prebuildfs /
 RUN install_packages ca-certificates curl gzip libaudit1 libbsd0 libbz2-1.0 libc6 libcap-ng0 libcom-err2 libcurl4 libexpat1 libffi6 libfftw3-double3 libfontconfig1 libfreetype6 libgcc1 libgcrypt20 libglib2.0-0 libgmp10 libgnutls30 libgomp1 libgpg-error0 libgssapi-krb5-2 libhogweed4 libicu63 libidn2-0 libjemalloc2 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblcms2-2 libldap-2.4-2 liblqr-1-0 libltdl7 liblzma5 libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmcrypt4 libmemcached11 libmemcachedutil2 libncurses6 libnettle6 libnghttp2-14 libonig5 libp11-kit0 libpam0g libpcre3 libpng16-16 libpq5 libpsl5 libreadline7 librtmp1 libsasl2-2 libsqlite3-0 libssh2-1 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5deb1 libtinfo6 libunistring2 libuuid1 libx11-6 libxau6 libxcb1 libxdmcp6 libxext6 libxml2 libxslt1.1 libzip4 procps sudo tar unzip zlib1g
 RUN /build/bitnami-user.sh
 RUN /build/install-nami.sh
-RUN bitnami-pkg install php-7.4.16-2 --checksum 7bb52dec2b83cfd5a95bc6e63085e7ec19b18867ad758fcc5acda8835c8dddb4
-RUN bitnami-pkg unpack apache-2.4.46-5 --checksum f6663ef2cd47d80d63af1da7ff319ed94afe8a825115b2f52894d799013b551c
-RUN bitnami-pkg install wp-cli-2.4.0-2 --checksum 33c3b53e87e9e433291ac3511e68263c80b43aa4de3dead9502934f506b7f2e6
-RUN bitnami-pkg unpack mysql-client-10.3.28-0 --checksum 9398376ca9e2033d5bc193232e8aa9b57d91d4ccf06fa67bfa0d30ef36e44c25
-RUN bitnami-pkg install libphp-7.4.16-0 --checksum c421ba5d9e4ad24e94662a3fa4fa73b172e5245a7a5bc866ce20d705d68d0882
-RUN bitnami-pkg unpack wordpress-5.7.0-3 --checksum a5ebc01fd94bad70c86aacead28e3a18383311022acf468d9c11f3a27bc64af3
+RUN bitnami-pkg install php-7.4.11-3 --checksum 0825a3aa24a25536d3978350d6fe1de0d43c2953a58b97f28855e90dcc954d3c
+RUN bitnami-pkg unpack apache-2.4.46-2 --checksum 8d591562d804902c986f59f18bbea5e47289f4cbfb364c13862d4b9df557e0f4
+RUN bitnami-pkg install wp-cli-2.4.0-0 --checksum 8095bdd2f96a137cb3f54836ad9deb90510b0927472e532f41e1708345432230
+RUN bitnami-pkg unpack mysql-client-10.3.25-0 --checksum 12528e33966094535a302d557eca3eb1ae7d5c7b8fff4b9e70d96cafedbb5341
+RUN bitnami-pkg install libphp-7.4.11-1 --checksum 2a552ec9133bfeea17ee4fa40976499165cc3c6c89e00d483063df083abe4b13
+RUN bitnami-pkg unpack wordpress-5.5.1-10 --checksum 4bc01a2f8799bfa93b7be64fad69be83ddd488dcff94193fb789bd06e438a7df
 RUN bitnami-pkg install tini-0.19.0-1 --checksum 9b1f1c095944bac88a62c1b63f3bff1bb123aa7ccd371c908c0e5b41cec2528d
-RUN bitnami-pkg install gosu-1.12.0-2 --checksum 4d858ac600c38af8de454c27b7f65c0074ec3069880cb16d259a6e40a46bbc50RUN apt-get update && apt-get upgrade -y && \
+RUN bitnami-pkg install gosu-1.12.0-2 --checksum 4d858ac600c38af8de454c27b7f65c0074ec3069880cb16d259a6e40a46bbc50
+RUN apt-get update && apt-get upgrade -y && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives
 RUN ln -sf /dev/stdout /opt/bitnami/apache/logs/access_log && \
     ln -sf /dev/stderr /opt/bitnami/apache/logs/error_log
